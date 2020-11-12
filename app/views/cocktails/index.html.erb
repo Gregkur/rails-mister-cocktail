@@ -1,0 +1,13 @@
+<div class="hero">
+</div>
+<div class="container my-3">
+    <ul class="list-group">
+        <% @cocktails.each do |cocktail| %>
+            <li class="list-group-item my-2">
+                ⭐<%= link_to cocktail.name, cocktail_path(cocktail) %>⭐
+            </li>
+        <% end %>
+    </ul>
+    <a href="cocktails/new"> <button class="btn btn-outline-primary" type="button">Create restaurant</button></a>
+</div>
+
