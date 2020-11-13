@@ -1,0 +1,17 @@
+<div class = "container">
+      <h3>Add a new dose</h3>
+    <div class="background background-add">
+        <div class="container my-3">
+            <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <div class="my-1 container dropdowns">
+            <%= f.association :ingredient%>
+            <%= f.input :description %>
+            </div>
+            <%= f.button :submit, class: "btn btn-dark" %>
+            <h1><%= link_to "Go back", '/cocktails', class: "btn btn-dark btn-lg button  " %></h1>
+            <% end %>
+        </div>
+        </ul>
+        </div>
+    </div>
+</div>

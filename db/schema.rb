@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_11_12_110429) do
     t.bigint "ingredient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cocktail_id"], name: "index_doses_on_coctail_id"
+    t.index ["cocktail_id"], name: "index_doses_on_cocktail_id"
     t.index ["ingredient_id"], name: "index_doses_on_ingredient_id"
   end
 
@@ -36,8 +36,5 @@ ActiveRecord::Schema.define(version: 2020_11_12_110429) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
-  add_foreign_key "doses", "cocktails"
-  add_foreign_key "doses", "ingredients"
 
 end

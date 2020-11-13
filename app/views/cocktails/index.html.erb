@@ -1,13 +1,27 @@
-<div class="hero">
-</div>
-<div class="container my-3">
-    <ul class="list-group">
-        <% @cocktails.each do |cocktail| %>
-            <li class="list-group-item my-2">
-                ⭐<%= link_to cocktail.name, cocktail_path(cocktail) %>⭐
-            </li>
-        <% end %>
-    </ul>
-    <a href="cocktails/new"> <button class="btn btn-outline-primary" type="button">Create restaurant</button></a>
-</div>
+<% drinks = ['https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mojito-cocktails-ce6135d.jpg?quality=90&resize=504,458?quality=90&webp=true&resize=504,459','https://images.unsplash.com/photo-1586338211598-e2d64cf97e28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80','https://images.unsplash.com/photo-1559280247-8fa41750ca29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80', 'https://images.unsplash.com/photo-1563223771-5fe4038fbfc9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80', 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1562708294-4df93280352d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80', 'https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1587888637140-849b25d80ef9?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80', 'https://images.unsplash.com/flagged/photo-1587282864638-c42afb4b34e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80']%>
 
+<div class = "container">
+    <div class="background">
+    <div class="banner">
+        <div class="banner-content">
+            <h1>Cocktail d'amore</h1>
+            <p>Pille, party, pulver aber keine polizei</p>
+            <h1><%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-dark btn-lg button  " %></h1>
+        </div>
+        </div>
+
+        <div class="container ">
+        <div class="row">
+            <% @cocktails.each do |cocktail| %>
+            <div class="col-md-3 mt-3 mb-3">
+                <div class="card" style="background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%=drinks.sample%>');">
+                <div class="card-description card-link">
+                    <%= link_to cocktail.name, cocktail_path(cocktail) %>
+                </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+    </div>
+</div>
