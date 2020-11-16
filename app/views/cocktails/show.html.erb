@@ -1,27 +1,41 @@
 <div class = "container">
+
     <div class="background background-add">
+
         <div class="container my-4">
-        <ul class="list-group">
-                <li class="list-group-item my-4">
-                    ⭐<%=@cocktail.name %>⭐
-                    <br>
+
+          <ul class="list-group">
+
+                <li class="card my-4 card-cocktail">
+                    <a><%=@cocktail.name %></a>
                 </li>
-                <% @cocktail.doses.each do |dose| %>
-                       <tr>
-              <td><%= dose.ingredient.name %></td>
-              <td><%= dose.description %></td>
-              <td>
-                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class="fa fa-trash destroy_dose"></i>
-                <% end %>
-                </td>
-                </tr>
-                <% end %>
+          </ul>
+                <div class="container d-inline-flex">
+                  <div class="container-sm">
+                    <% @cocktail.doses.each do |dose| %>
+                      <h3><%= dose.ingredient.name %></h3>
+                        <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                          <i class="fa fa-trash destroy_dose"></i> 
+                          <% end %> 
+                    <% end %>
+                  </div>
+
+                  <div class="container-sm">
+                    <% @cocktail.doses.each do |dose| %>
+                      <h3><%= dose.description %></h3>
+                        <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                          <i class="fa fa-trash destroy_dose"></i>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
                 
             <h1><%= link_to "Add ingredient!", new_cocktail_dose_path(@cocktail), class: "btn btn-dark btn-lg button dark" %></h1>
             <h1><%= link_to "Go back", '/cocktails', class: "btn btn-dark btn button  " %></h1>
         </div>
-        </ul>
+
         </div>
+
     </div>
+
 </div>

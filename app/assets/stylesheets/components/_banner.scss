@@ -39,13 +39,14 @@
   }
   .background {
       margin-bottom: 10px;
-      border-radius: 5px;
       background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
       background-size: cover;
       background-position: center;
       opacity: 0.8;
       height: 210vh;
+      box-sizing: content-box;
       width: 100%;
+      border-radius: 5px;
   }
 h3{
   color: rgb(22, 22, 22);
@@ -55,9 +56,12 @@ label {
     margin-bottom: 0.5rem;
     color: white;
 }
+
+
 .container{
   margin-top: 10px;
   text-align: center;
+  width: 100%;
 }
 
 .dropdowns{
@@ -67,9 +71,20 @@ label {
 }
 
   .background-add{
-    height: 350px !important;
+    height: 700px !important;
   }
 
   .list-group-item{
     opacity: 0.6 !important;
+  }
+  .container-md{
+    width: 500px !important;
+    background-color: white;;
+    h3{
+      font-size: 25px;
+      font-weight: lighter;
+      letter-spacing: 7px;
+      color: black !important;
+      font-family: 'Raleway';
+    }
   }
